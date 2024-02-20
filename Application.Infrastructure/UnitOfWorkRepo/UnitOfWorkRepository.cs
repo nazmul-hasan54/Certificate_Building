@@ -1,7 +1,9 @@
-﻿using Application.Contracts.Departments;
+﻿using Application.Contracts.Certificates;
+using Application.Contracts.Departments;
 using Application.Contracts.Employees;
 using Application.Contracts.UnitOfWork;
 using Application.CoreInformation.Context;
+using Application.Infrastructure.Certificates;
 using Application.Infrastructure.Departments;
 using Application.Infrastructure.Employees;
 using System;
@@ -17,6 +19,7 @@ namespace Application.Infrastructure.UnitOfWorkRepo
         private ProjectDbContext _projectDbContext;
         private IDepartmentRepository _department;
         private IEmployeeRepository _employee;
+        private ICertificateRepository _certificate;
         public IDepartmentRepository Department 
         {
             get 
@@ -39,6 +42,19 @@ namespace Application.Infrastructure.UnitOfWorkRepo
                 return _employee; 
             }
         }
+
+        public ICertificateRepository Certificate 
+        {
+            get 
+            {
+                if (_certificate == null) 
+                {
+                    _certificate = new CertificateRepository(_projectDbContext);
+                }
+                return _certificate; 
+            }
+        }
+
         public UnitOfWorkRepository(ProjectDbContext projectDbContext)
         {
             _projectDbContext = projectDbContext;

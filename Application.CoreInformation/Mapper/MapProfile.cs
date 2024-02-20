@@ -19,7 +19,8 @@ namespace Application.CoreInformation.Mapper
                 .ReverseMap();
             CreateMap<Employee, EmployeeDTO>()
                 .ReverseMap();
-            CreateMap<Certificate, CertificateDTO>();
+            CreateMap<Certificate, CertificateDTO>()
+                .ReverseMap();
         }
     }
 }

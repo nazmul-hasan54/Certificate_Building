@@ -10,6 +10,7 @@ namespace Application.SharedDTO
     {
         public int CertificateId { get; set; }
         public string? CertificateName { get; set; }
+        public DateTime CertificateDate { get; set; }
         public int EmployeeId { get; set; }
     }
 }

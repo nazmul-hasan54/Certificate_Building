@@ -1,4 +1,5 @@
-﻿using Application.Contracts.Departments;
+﻿using Application.Contracts.Certificates;
+using Application.Contracts.Departments;
 using Application.Contracts.Employees;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,8 @@ namespace Application.Contracts.UnitOfWork
     {
         IDepartmentRepository Department { get; }
         IEmployeeRepository Employee { get; }
+        ICertificateRepository Certificate { get; }
+        
         void Save();
     }
 }
