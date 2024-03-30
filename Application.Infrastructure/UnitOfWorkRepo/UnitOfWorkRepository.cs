@@ -1,13 +1,15 @@
 ﻿using Application.Contracts.Certificates;
 using Application.Contracts.Departments;
 using Application.Contracts.Employees;
+using Application.Contracts.Registrations;
 using Application.Contracts.UnitOfWork;
-using Application.Contracts.Users;
+using Application.Contracts.User;
 using Application.CoreInformation.Context;
 using Application.Infrastructure.Certificates;
 using Application.Infrastructure.Departments;
 using Application.Infrastructure.Employees;
-using Application.Infrastructure.Users;
+using Application.Infrastructure.Registrations;
+using Application.Infrastructure.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +25,7 @@ namespace Application.Infrastructure.UnitOfWorkRepo
         private IEmployeeRepository _employee;
         private ICertificateRepository _certificate;
         private IUserRepository _user;
+        private IRegistrationRepository _registration;
         public IDepartmentRepository Department
         {
             get
@@ -67,6 +70,18 @@ namespace Application.Infrastructure.UnitOfWorkRepo
                     _user = new UserRepository(_projectDbContext);
                 }
                 return _user; 
+            }
+        }
+
+        public IRegistrationRepository Registration 
+        {
+            get 
+            {
+                if (_registration == null) 
+                {
+                    _registration = new RegistrationRepository(_projectDbContext);
+                }
+                return _registration; 
             }
         }
 

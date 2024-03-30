@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Contracts.Users
+namespace Application.Contracts.User
 {
     public interface IUserRepository: IBaseRepository<UserRegistrationRequestDTO>
     {

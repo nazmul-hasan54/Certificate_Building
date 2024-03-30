@@ -21,6 +21,8 @@ namespace Application.CoreInformation.Mapper
                 .ReverseMap();
             CreateMap<Certificate, CertificateDTO>()
                 .ReverseMap();
+            CreateMap<Users, UsersDTO>()
+                .ReverseMap();
         }
     }
 }

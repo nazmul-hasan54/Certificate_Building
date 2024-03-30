@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Domain.Models
+namespace Application.SharedDTO
 {
-    public class Users
+    public class UsersDTO
     {
         public int UsersId { get; set; }
         public string? UserName { get; set; }

@@ -1,4 +1,4 @@
-﻿using Application.Contracts.Users;
+﻿using Application.Contracts.User;
 using Application.CoreInformation.Context;
 using Application.Infrastructure.BaseRepository;
 using Application.SharedDTO;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Infrastructure.Users
+namespace Application.Infrastructure.User
 {
     public class UserRepository : BaseRepository<UserRegistrationRequestDTO>, IUserRepository
     {
